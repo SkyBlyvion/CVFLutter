@@ -4,14 +4,17 @@ void main() {
   runApp(const Curriculum());
 }
 
+// Widget principal représentant le Curriculum
 class Curriculum extends StatelessWidget {
   const Curriculum({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Configuration de l'application
       title: "Mon CV en ligne",
       debugShowCheckedModeBanner: false,
+      // Configuration de la page d'accueil
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -32,9 +35,11 @@ class Curriculum extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Informations personnelles et image
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Informations personnelles (nom, prénom, date de naissance)
                   const Expanded(
                     flex: 2,
                     child: Column(
@@ -71,6 +76,7 @@ class Curriculum extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 16),
+                  // Image
                   Expanded(
                     flex: 3,
                     child: Container(
@@ -88,6 +94,7 @@ class Curriculum extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
+              // Expériences professionnelles
               const Text(
                 "Expériences professionnelles",
                 style: TextStyle(
@@ -97,10 +104,11 @@ class Curriculum extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text("Mes experiences"),
-              const Text("Mes experiences"),
+              const Text("Gendarmerie"),
+              const Text("Programmation"),
               const Text("Mes experiences"),
               const SizedBox(height: 16),
+              // Formations
               const Text(
                 "Formations",
                 style: TextStyle(
@@ -110,10 +118,11 @@ class Curriculum extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text("Mes formations"),
-              const Text("Mes formations"),
+              const Text("Bac STI2D SIN"),
+              const Text("License nv6 Dev Web"),
               const Text("Mes formations"),
               const SizedBox(height: 16),
+              // Hobbies
               const Text(
                 "Hobbies",
                 style: TextStyle(
@@ -127,7 +136,7 @@ class Curriculum extends StatelessWidget {
               const Text("Gaming"),
               const Text("Tir en Stand de Tir"),
               const SizedBox(height: 16),
-              // Use ListView to allow horizontal scrolling
+              // Liste des images (hobbies)
               SizedBox(
                 height: 120,
                 child: ListView(
@@ -149,6 +158,7 @@ class Curriculum extends StatelessWidget {
     );
   }
 
+  // Fonction pour construire un widget Image à partir d'un chemin d'image
   Widget _buildImage(String imagePath) {
     return SizedBox(
       width: 120,
